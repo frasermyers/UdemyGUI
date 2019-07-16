@@ -2,16 +2,13 @@ from tkinter import *
 
 root = Tk()
 
-button_one = Button(None, text="Click Me!", fg="Blue")
-button_one.pack()
+label_1 = Label(root, text="Label 1")
+label_1.grid(row=0, column=0)
 
-button_two = Button(None, text="Hello", fg="Red")
-button_two.pack(fill=X)
+label_2 = Label(root, text="Label 2")
+label_2.grid(row=0, column=1)
 
-button_three = Button(None, text="Hello", fg="Purple")
-button_three.pack(side=RIGHT, fill=Y)
-
-button_four = Button(None, text="Hello", fg="Yellow")
-button_four.pack()
+label_3 = Label(root, text="Label 3")
+label_3.grid(row=1, column=0)
 
 root.mainloop()
