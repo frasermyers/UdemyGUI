@@ -2,13 +2,13 @@ from tkinter import *
 
 root = Tk()
 
-equa = "0"
+equa = ""
 
 equation = StringVar()
 
 calculation = Label(root, textvariable=equation)
 
-equation.set("0")
+equation.set("Enter your equation")
 
 calculation.grid(columnspan=4)
 
@@ -19,8 +19,21 @@ def btn_press(num):
       equation.set(equa)
 
 
+def equal_press():
+      global equa
+      total = eval(equa)
+      equation.set(total)
+      equa = ""
+
+
+def clear():
+      global equa
+      equa=""
+      equation.set("")
+
+
 button_0 = Button(root, text="0", command=lambda: btn_press(0))
-button_0.grid(row=4, column=2)
+button_0.grid(row=4, column=1)
 button_1 = Button(root, text="1", command=lambda: btn_press(1))
 button_1.grid(row=1, column=0)
 button_2 = Button(root, text="2", command=lambda: btn_press(2))
@@ -48,8 +61,10 @@ multiply = Button(root, text="*", command=lambda: btn_press("*"))
 multiply.grid(row=3, column=3)
 divide = Button(root, text="/", command=lambda: btn_press("/"))
 divide.grid(row=4, column=3)
-
-
+equal = Button(root, text="=", command=equal_press)
+equal.grid(row=4, column=2)
+clear = Button(root, text="C", command=clear)
+clear.grid(row=4, column=0)
 
 
 root.mainloop()
