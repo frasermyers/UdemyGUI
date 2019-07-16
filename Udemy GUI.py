@@ -2,33 +2,22 @@ from tkinter import *
 
 root = Tk()
 
-
-def left_click(event):
-    print("Left")
-
-
-def right_click(event):
-    print("right")
+label_1 = Label(root, text="Enter your expression!")
+label_1.pack()
 
 
-def scroll(event):
-    print("Scroll")
+def evaluate(event):
+    data = e.get()
+    answer.configure(text="Answer: " + str(eval(data)))
 
 
-def left_key(event):
-    print("Left Key Pressed")
+e = Entry(root)
 
+e.bind("<Return>", evaluate)
+e.pack()
 
-def right_key(event):
-    print("Right Key Pressed")
+answer = Label(root)
+answer.pack()
 
-
-root.geometry("500x500")
-
-root.bind("<Button-1>", left_click)
-root.bind("<Button-3>", right_click)
-root.bind("<Button-2>", scroll)
-root.bind("<Left>", left_key)
-root.bind("<Right>", right_key)
 
 root.mainloop()
