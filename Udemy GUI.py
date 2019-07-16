@@ -1,23 +1,17 @@
 from tkinter import *
+import tkinter.messagebox
 
 root = Tk()
 
-label_1 = Label(root, text="Enter your expression!")
-label_1.pack()
+tkinter.messagebox.showinfo("Window Title", "Did you know that the world just blew up?")
 
+answer = tkinter.messagebox.askquestion("Question 1", "Are you human?")
 
-def evaluate(event):
-    data = e.get()
-    answer.configure(text="Answer: " + str(eval(data)))
+if answer == "yes":
+    tkinter.messagebox.showinfo("Congrats", "Thank god")
 
-
-e = Entry(root)
-
-e.bind("<Return>", evaluate)
-e.pack()
-
-answer = Label(root)
-answer.pack()
+if answer == "no":
+    tkinter.messagebox.showinfo("Alien", "You are 100% confirmed alien")
 
 
 root.mainloop()
