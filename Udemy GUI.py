@@ -3,17 +3,32 @@ from tkinter import *
 root = Tk()
 
 
-def print_name(event):
-    print("Hello there Fraser Myers")
+def left_click(event):
+    print("Left")
 
 
-def rude_name(event):
-    print("Cunt")
+def right_click(event):
+    print("right")
 
 
-button_1 = Button(root, text="Click Me")
-button_1.bind("<Button-1>", print_name)
-button_1.bind("<Button-3>", rude_name)
-button_1.pack()
+def scroll(event):
+    print("Scroll")
+
+
+def left_key(event):
+    print("Left Key Pressed")
+
+
+def right_key(event):
+    print("Right Key Pressed")
+
+
+root.geometry("500x500")
+
+root.bind("<Button-1>", left_click)
+root.bind("<Button-3>", right_click)
+root.bind("<Button-2>", scroll)
+root.bind("<Left>", left_key)
+root.bind("<Right>", right_key)
 
 root.mainloop()
