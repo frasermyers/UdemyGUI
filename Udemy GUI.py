@@ -2,10 +2,10 @@ from tkinter import *
 
 root = Tk()
 
-the_label = Label(root, text="This is our Tkinter Window")
-the_label.pack()
+the_button = Button(None, text="Click Me!", fg="Blue")
+the_button.pack()
 
-the_labell = Label(root, text="This is our second sentence")
-the_labell.pack()
+th_button = Button(None, text="Hello", fg="Red")
+th_button.pack()
 
 root.mainloop()
